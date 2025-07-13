@@ -472,13 +472,15 @@ export default function RobotAIWebsite() {
               rel="noopener noreferrer"
               className="flex flex-col items-center text-gray-400 hover:text-cyan-400 transition-colors group"
             >
-              <Image
-                src="/images/telegram-icon-new.webp"
-                alt="Telegram"
-                width={80} // Adjust width/height to match original circle size
-                height={80}
-                className="object-contain mb-3 group-hover:scale-110 transition-transform"
-              />
+              <div className="w-20 h-20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Image
+                  src="/images/telegram-icon-new.webp"
+                  alt="Telegram"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
+              </div>
               <span className="text-lg font-bold font-mono">TELEGRAM</span>
             </a>
             <a
@@ -487,13 +489,9 @@ export default function RobotAIWebsite() {
               rel="noopener noreferrer"
               className="flex flex-col items-center text-gray-400 hover:text-cyan-400 transition-colors group"
             >
-              <Image
-                src="/images/twitter-icon.png"
-                alt="Twitter"
-                width={80} // Adjust width/height to match original circle size
-                height={80}
-                className="object-contain mb-3 group-hover:scale-110 transition-transform"
-              />
+              <div className="w-20 h-20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Image src="/images/twitter-icon.png" alt="Twitter" width={40} height={40} className="object-contain" />
+              </div>
               <span className="text-lg font-bold font-mono">TWITTER</span>
             </a>
           </div>
