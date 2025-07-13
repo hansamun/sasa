@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "SpectraCore",
   description: "Created with v0",
   icons: {
-    icon: "/images/favicon-robot.jpeg", // Diperbarui di sini
+    icon: "/images/favicon-robot.jpeg", // Memastikan path favicon sudah benar
   },
     generator: 'v0.dev'
 }
