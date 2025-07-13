@@ -171,15 +171,6 @@ export default function RobotAIWebsite() {
               Bringing cutting-edge robot AI technology for a smarter and more efficient future.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-mono px-8 py-3">
-                EXPLORE UNITS
-              </Button>
-              <Button
-                variant="outline"
-                className="border-purple-500 text-purple-400 hover:bg-purple-500/10 font-mono px-8 py-3 bg-transparent"
-              >
-                LEARN MORE
-              </Button>
               <Button
                 className="bg-gradient-to-r from-purple-500 to-red-600 hover:from-purple-600 hover:to-red-700 text-white font-mono px-8 py-3"
                 onClick={() => window.open("https://creator.bid/agents/6873d829a1dc95d8858420f9", "_blank")}
