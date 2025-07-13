@@ -180,6 +180,12 @@ export default function RobotAIWebsite() {
               >
                 LEARN MORE
               </Button>
+              <Button
+                className="bg-gradient-to-r from-purple-500 to-red-600 hover:from-purple-600 hover:to-red-700 text-white font-mono px-8 py-3"
+                onClick={() => window.open("https://creator.bid/agents/6873d829a1dc95d8858420f9", "_blank")}
+              >
+                BUY $SPECTR
+              </Button>
             </div>
           </div>
 
