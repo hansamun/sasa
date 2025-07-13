@@ -15,8 +15,11 @@ const rajdhani = Rajdhani({
 })
 
 export const metadata: Metadata = {
-  title: "SpectraCore", // Diperbarui di sini
+  title: "SpectraCore",
   description: "Created with v0",
+  icons: {
+    icon: "/images/favicon-robot.jpeg", // Diperbarui di sini
+  },
     generator: 'v0.dev'
 }
 
