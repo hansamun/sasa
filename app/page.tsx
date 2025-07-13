@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Zap, Eye, Brain, ChevronDown, Menu } from "lucide-react" // Remove Cpu from import
+import { ChevronDown, Menu } from "lucide-react" // Remove Cpu from import
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet" // Import Sheet components
 
 export default function RobotAIWebsite() {
@@ -157,7 +157,6 @@ export default function RobotAIWebsite() {
           >
             <div className="space-y-2">
               <Badge variant="outline" className="border-cyan-500 text-cyan-400 font-mono">
-                <Zap className="h-3 w-3 mr-1" />
                 SYSTEM ONLINE
               </Badge>
               <h2 className="text-5xl lg:text-7xl font-bold leading-tight">
@@ -173,7 +172,6 @@ export default function RobotAIWebsite() {
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-mono px-8 py-3">
-                <Brain className="h-4 w-4 mr-2" />
                 EXPLORE UNITS
               </Button>
               <Button
@@ -225,7 +223,6 @@ export default function RobotAIWebsite() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge variant="outline" className="border-purple-500 text-purple-400 font-mono mb-4">
-              <Eye className="h-3 w-3 mr-1" />
               ACTIVE UNITS
             </Badge>
             <h2 className="text-4xl lg:text-6xl font-bold mb-6">
@@ -279,7 +276,6 @@ export default function RobotAIWebsite() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge variant="outline" className="border-orange-500 text-orange-400 font-mono mb-4">
-              <Brain className="h-3 w-3 mr-1" />
               UNIT PROFILES
             </Badge>
             <h2 className="text-4xl lg:text-6xl font-bold mb-6">
@@ -353,7 +349,6 @@ export default function RobotAIWebsite() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <Badge variant="outline" className="border-red-500 text-red-400 font-mono mb-4">
-                <Brain className="h-3 w-3 mr-1" />
                 ABOUT SpectraCore
               </Badge>
               <h2 className="text-4xl lg:text-6xl font-bold mb-8">
@@ -452,7 +447,6 @@ export default function RobotAIWebsite() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge variant="outline" className="border-cyan-500 text-cyan-400 font-mono mb-4">
-              <Brain className="h-3 w-3 mr-1" />
               CONNECT WITH US
             </Badge>
             <h2 className="text-4xl lg:text-6xl font-bold mb-6">
