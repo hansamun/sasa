@@ -460,23 +460,7 @@ export default function RobotAIWebsite() {
           </div>
 
           <div className="flex justify-center space-x-8">
-            <a
-              href="https://t.me/yourtelegramchannel" // Replace with actual Telegram link
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center text-gray-400 hover:text-cyan-400 transition-colors group"
-            >
-              <div className="w-20 h-20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <Image
-                  src="/images/telegram-icon-new.webp"
-                  alt="Telegram"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-lg font-bold font-mono">TELEGRAM</span>
-            </a>
+            {/* Removed Telegram link */}
             <a
               href="https://twitter.com/yourtwitterhandle" // Replace with actual Twitter link
               target="_blank"
