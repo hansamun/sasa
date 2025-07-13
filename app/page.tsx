@@ -5,8 +5,8 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ChevronDown, Menu } from "lucide-react" // Remove Cpu from import
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet" // Import Sheet components
+import { ChevronDown, Menu } from "lucide-react"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export default function RobotAIWebsite() {
   const [currentRobot, setCurrentRobot] = useState(0)
@@ -460,17 +460,22 @@ export default function RobotAIWebsite() {
           </div>
 
           <div className="flex justify-center space-x-8">
-            {/* Removed Telegram link */}
             <a
-              href="https://twitter.com/yourtwitterhandle" // Replace with actual Twitter link
+              href="https://x.com/SpectraCoreAi"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center text-gray-400 hover:text-cyan-400 transition-colors group"
             >
               <div className="w-20 h-20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <Image src="/images/twitter-icon.png" alt="Twitter" width={40} height={40} className="object-contain" />
+                <Image
+                  src="/images/twitter-bird-icon.png" // Updated src
+                  alt="Twitter bird logo" // Updated alt
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
               </div>
-              <span className="text-lg font-bold font-mono">TWITTER</span>
+              <span className="text-lg font-bold font-mono">TWITTER</span> {/* Updated text back to TWITTER */}
             </a>
           </div>
         </div>
