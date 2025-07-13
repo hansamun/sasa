@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Cpu, Zap, Eye, Brain, ChevronDown, Menu } from "lucide-react" // Import Menu icon
+import { Zap, Eye, Brain, ChevronDown, Menu } from "lucide-react" // Remove Cpu from import
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet" // Import Sheet components
 
 export default function RobotAIWebsite() {
@@ -96,7 +96,6 @@ export default function RobotAIWebsite() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Cpu className="h-8 w-8 text-cyan-400 animate-pulse" />
               <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 SpectraCore
               </h1>
@@ -413,48 +412,7 @@ export default function RobotAIWebsite() {
 
             <div className="mb-16">
               <h3 className="text-3xl font-bold text-white font-mono mb-8 text-center">TECHNOLOGICAL CAPABILITIES</h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Cpu className="h-10 w-10 text-white" />
-                  </div>
-                  <h4 className="text-xl font-bold text-white font-mono mb-2">QUANTUM PROCESSING</h4>
-                  <p className="text-gray-400 font-mono text-sm">
-                    50+ Petaflops processing power with quantum-enhanced algorithms for complex problem solving and
-                    real-time analysis.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Eye className="h-10 w-10 text-white" />
-                  </div>
-                  <h4 className="text-xl font-bold text-white font-mono mb-2">OMNISPECTRAL VISION</h4>
-                  <p className="text-gray-400 font-mono text-sm">
-                    Advanced multi-spectrum optical systems capable of detecting threats across infrared, ultraviolet,
-                    and quantum spectrums.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Zap className="h-10 w-10 text-white" />
-                  </div>
-                  <h4 className="text-xl font-bold text-white font-mono mb-2">FUSION POWER CORE</h4>
-                  <p className="text-gray-400 font-mono text-sm">
-                    Self-sustaining quantum fusion reactors providing unlimited operational time with zero environmental
-                    impact.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Brain className="h-10 w-10 text-white" />
-                  </div>
-                  <h4 className="text-xl font-bold text-white font-mono mb-2">CONSCIOUSNESS MATRIX</h4>
-                  <p className="text-gray-400 font-mono text-sm">
-                    Bio-neural interfaces that bridge artificial and human consciousness for unprecedented cooperation
-                    and understanding.
-                  </p>
-                </div>
-              </div>
+              {/* Removed the entire div containing the four icons */}
             </div>
 
             <div className="bg-gradient-to-r from-slate-800/50 to-slate-900/50 rounded-2xl p-8 border border-cyan-500/30">
@@ -494,7 +452,7 @@ export default function RobotAIWebsite() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge variant="outline" className="border-cyan-500 text-cyan-400 font-mono mb-4">
-              <Cpu className="h-3 w-3 mr-1" />
+              <Brain className="h-3 w-3 mr-1" />
               CONNECT WITH US
             </Badge>
             <h2 className="text-4xl lg:text-6xl font-bold mb-6">
@@ -545,7 +503,6 @@ export default function RobotAIWebsite() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <Cpu className="h-6 w-6 text-cyan-400" />
               <span className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 SpectraCore
               </span>
