@@ -5,7 +5,8 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Cpu, Zap, Eye, Brain, ChevronDown } from "lucide-react" // Keep Lucide icons for other parts
+import { Cpu, Zap, Eye, Brain, ChevronDown, Menu } from "lucide-react" // Import Menu icon
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet" // Import Sheet components
 
 export default function RobotAIWebsite() {
   const [currentRobot, setCurrentRobot] = useState(0)
@@ -100,6 +101,7 @@ export default function RobotAIWebsite() {
                 SpectraCore
               </h1>
             </div>
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-6">
               <a href="#home" className="text-cyan-400 hover:text-white transition-colors font-mono">
                 HOME
@@ -114,12 +116,42 @@ export default function RobotAIWebsite() {
                 CONTACT
               </a>
             </nav>
+            {/* Mobile Navigation */}
+            <div className="md:hidden">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="text-cyan-400">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Toggle navigation menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="bg-black/90 border-cyan-500/30 text-white">
+                  <nav className="flex flex-col gap-6 pt-8">
+                    <a href="#home" className="text-cyan-400 hover:text-white transition-colors font-mono text-lg">
+                      HOME
+                    </a>
+                    <a href="#robots" className="text-gray-400 hover:text-cyan-400 transition-colors font-mono text-lg">
+                      UNITS
+                    </a>
+                    <a href="#about" className="text-gray-400 hover:text-cyan-400 transition-colors font-mono text-lg">
+                      ABOUT
+                    </a>
+                    <a
+                      href="#contact"
+                      className="text-gray-400 hover:text-cyan-400 transition-colors font-mono text-lg"
+                    >
+                      CONTACT
+                    </a>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative z-10 min-h-screen flex items-center justify-center">
+      <section id="home" className="relative z-10 min-h-screen flex items-center justify-center py-16 md:py-0">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
           <div
             className={`space-y-6 transition-all duration-1000 ${isLoaded ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}
@@ -140,7 +172,7 @@ export default function RobotAIWebsite() {
             <p className="text-xl text-gray-300 font-mono leading-relaxed">
               Bringing cutting-edge robot AI technology for a smarter and more efficient future.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-mono px-8 py-3">
                 <Brain className="h-4 w-4 mr-2" />
                 EXPLORE UNITS
@@ -157,7 +189,7 @@ export default function RobotAIWebsite() {
           <div
             className={`relative transition-all duration-1000 delay-300 ${isLoaded ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
           >
-            <div className="relative w-full h-[600px] rounded-2xl overflow-hidden border border-cyan-500/30 bg-gradient-to-br from-slate-800/50 to-black/50 backdrop-blur-sm">
+            <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden border border-cyan-500/30 bg-gradient-to-br from-slate-800/50 to-black/50 backdrop-blur-sm">
               <Image
                 src={robots[currentRobot].image || "/placeholder.svg"}
                 alt={robots[currentRobot].name}
@@ -433,7 +465,7 @@ export default function RobotAIWebsite() {
                   <p className="text-gray-300 font-mono text-sm leading-relaxed">
                     Our AI units are currently deployed across 47 countries, protecting critical infrastructure and
                     civilian populations. From the neon-lit streets of Neo-Tokyo to the sprawling megacities of New
-                    Angeles, ROBO.AI guardians stand watch.
+                    Angeles, SpectraCore guardians stand watch.
                   </p>
                 </div>
                 <div>
@@ -447,7 +479,7 @@ export default function RobotAIWebsite() {
                 <div>
                   <h4 className="text-xl font-bold text-red-400 font-mono mb-3">ETHICAL STANDARDS</h4>
                   <p className="text-gray-300 font-mono text-sm leading-relaxed">
-                    Every ROBO.AI unit is governed by the Universal AI Ethics Protocol, ensuring that artificial
+                    Every SpectraCore unit is governed by the Universal AI Ethics Protocol, ensuring that artificial
                     intelligence serves humanity's best interests while respecting individual rights and freedoms.
                   </p>
                 </div>
