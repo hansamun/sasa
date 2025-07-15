@@ -173,9 +173,9 @@ export default function RobotAIWebsite() {
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button
                 className="bg-gradient-to-r from-purple-500 to-red-600 hover:from-purple-600 hover:to-red-700 text-white font-mono px-8 py-3"
-                onClick={() => window.open("https://www.avax.network/", "_blank")}
+                onClick={() => window.open("https://arena.social/SpectraCoreAi", "_blank")}
               >
-                AVAX
+                BUY $SPECTR
               </Button>
             </div>
           </div>
@@ -475,15 +475,21 @@ export default function RobotAIWebsite() {
               <span className="text-lg font-bold font-mono">TWITTER</span>
             </a>
             <a
-              href="https://www.avax.network/"
+              href="https://arena.social/SpectraCoreAi"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center text-gray-400 hover:text-cyan-400 transition-colors group"
             >
               <div className="w-20 h-20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <Image src="/images/avax-logo.png" alt="AVAX logo" width={40} height={40} className="object-contain" />
+                <Image
+                  src="/images/spectr-robot-logo.jpeg"
+                  alt="SpectraCore robot logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
               </div>
-              <span className="text-lg font-bold font-mono">AVAX</span>
+              <span className="text-lg font-bold font-mono">BUY $SPECTR</span>
             </a>
           </div>
         </div>
