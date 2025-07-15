@@ -173,7 +173,9 @@ export default function RobotAIWebsite() {
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button
                 className="bg-gradient-to-r from-purple-500 to-red-600 hover:from-purple-600 hover:to-red-700 text-white font-mono px-8 py-3"
-                onClick={() => window.open("https://arena.social/SpectraCoreAi", "_blank")}
+                onClick={() =>
+                  window.open("https://www.arenapro.io/token/0x2135dcbcca586eac2d28c36b0398ab44a37a9f03", "_blank")
+                }
               >
                 BUY $SPECTR
               </Button>
@@ -475,7 +477,7 @@ export default function RobotAIWebsite() {
               <span className="text-lg font-bold font-mono">TWITTER</span>
             </a>
             <a
-              href="https://arena.social/SpectraCoreAi"
+              href="https://www.arenapro.io/token/0x2135dcbcca586eac2d28c36b0398ab44a37a9f03"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center text-gray-400 hover:text-cyan-400 transition-colors group"
