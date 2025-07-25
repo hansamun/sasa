@@ -112,7 +112,7 @@ const AudioPlayer = () => {
     <div className="fixed bottom-4 right-4 z-50">
       <div className="bg-black/95 backdrop-blur-md border border-blue-900/30 rounded-lg p-4 min-w-[320px] shadow-2xl">
         <audio ref={audioRef} preload="auto" crossOrigin="anonymous">
-          <source src="/audio/song.mp3" type="audio/mpeg" />
+          <source src="https://wskffqaurfwbsuyokdjw.supabase.co/storage/v1/object/sign/aaa/song.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mYTFhZWY2My1mOWZkLTQ2MTYtOWIwYi00YzFhMDY5ZThkYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhYWEvc29uZy5tcDMiLCJpYXQiOjE3NTM0NjI2NjMsImV4cCI6MTc1NDA2NzQ2M30.MLGcL-drTi_J0AKByYQxaPjqN7iwgH-8sQZgdiL1oPc" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
 

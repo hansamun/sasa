@@ -1,6 +1,6 @@
 "use client"
 
-import { Copy, CheckCircle, ExternalLink } from "lucide-react"
+import { Copy, CheckCircle, ExternalLink, TrendingUp, ShoppingCart } from "lucide-react"
 import { useState } from "react"
 
 const Buy = () => {
@@ -21,8 +21,9 @@ const Buy = () => {
             How to Purchase <span className="text-blue-600">$LILPE</span>
           </h2>
           <p className="text-base sm:text-xl text-gray-400 max-w-4xl mx-auto calligraphy leading-relaxed">
-            Purchase <span className="text-blue-600">LILPE tokens</span> exclusively through{" "}
-            <span className="text-blue-600">Ape Store</span>. Built on{" "}
+            Purchase <span className="text-blue-600">LILPE tokens</span> on{" "}
+            <span className="text-blue-600">Ape Store</span> and track performance on{" "}
+            <span className="text-blue-600">DexScreener</span>. Built on{" "}
             <span className="text-blue-600">Base network</span> for fast, low-cost transactions.
           </p>
         </div>
@@ -71,25 +72,53 @@ const Buy = () => {
           </div>
         </div>
 
-        {/* Ape Store Section */}
-        <div className="mb-12 sm:mb-16 bg-black border border-blue-900/20 p-6 sm:p-10 brush-stroke rounded-xl text-center">
-          <h3 className="text-xl sm:text-3xl font-bold font-cinzel text-white mb-6">
-            Buy on <span className="text-blue-600">Ape Store</span>
-          </h3>
-          <p className="text-gray-400 mb-6 sm:mb-8 text-sm sm:text-lg">
-            <span className="text-blue-600">LILPE</span> is exclusively available on{" "}
-            <span className="text-blue-600">Ape Store</span>, the premier decentralized exchange for{" "}
-            <span className="text-blue-600">Base network tokens</span>.
-          </p>
-          <a
-            href="https://ape.store/base/0x04620ac712a1cf6f42d3412b5d7a82d3b7148ab6"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 sm:px-12 py-3 sm:py-4 font-cinzel font-bold text-base sm:text-lg rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center"
-          >
-            Trade on Ape Store
-            <ExternalLink size={20} className="ml-3" />
-          </a>
+        {/* Trading Platforms */}
+        <div className="mb-12 sm:mb-16 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {/* Ape Store Trading */}
+          <div className="bg-black border border-blue-900/20 p-6 sm:p-8 brush-stroke rounded-xl text-center">
+            <div className="bg-blue-600 p-4 rounded-full inline-block mb-6">
+              <ShoppingCart size={32} className="text-white" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold font-cinzel text-white mb-4">
+              Trade on <span className="text-blue-600">Ape Store</span>
+            </h3>
+            <p className="text-gray-400 mb-6 text-sm sm:text-base">
+              Buy and sell <span className="text-blue-600">LILPE tokens</span> directly on the premier{" "}
+              <span className="text-blue-600">Base network</span> DEX.
+            </p>
+            <a
+              href="https://ape.store/base/0x04620ac712a1cf6f42d3412b5d7a82d3b7148ab6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-4 font-cinzel font-bold text-sm sm:text-base rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center"
+            >
+              Trade Now
+              <ExternalLink size={18} className="ml-2" />
+            </a>
+          </div>
+
+          {/* DexScreener Charts */}
+          <div className="bg-black border border-blue-900/20 p-6 sm:p-8 brush-stroke rounded-xl text-center">
+            <div className="bg-green-600 p-4 rounded-full inline-block mb-6">
+              <TrendingUp size={32} className="text-white" />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold font-cinzel text-white mb-4">
+              View on <span className="text-green-400">DexScreener</span>
+            </h3>
+            <p className="text-gray-400 mb-6 text-sm sm:text-base">
+              Track <span className="text-blue-600">LILPE price</span>, volume, and market data with advanced{" "}
+              <span className="text-green-400">charts and analytics</span>.
+            </p>
+            <a
+              href="https://dexscreener.com/base/0x9E8D45af19539F711cd50E359dAae87E8F759399"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 font-cinzel font-bold text-sm sm:text-base rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center"
+            >
+              View Charts
+              <ExternalLink size={18} className="ml-2" />
+            </a>
+          </div>
         </div>
 
         {/* Purchase Guide */}
@@ -141,10 +170,10 @@ const Buy = () => {
                 4
               </div>
               <h4 className="font-bold text-white mb-2 sm:mb-3 text-base sm:text-lg">
-                Hold & <span className="text-blue-600">Participate</span>
+                Track & <span className="text-blue-600">Hold</span>
               </h4>
               <p className="text-gray-300 text-sm sm:text-base">
-                Welcome to <span className="text-blue-600">Little Pepe</span>! Hold your tokens and participate in our
+                Monitor your investment on <span className="text-green-400">DexScreener</span> and participate in our
                 growing <span className="text-blue-600">community</span>.
               </p>
             </div>
