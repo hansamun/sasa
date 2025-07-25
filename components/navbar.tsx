@@ -76,7 +76,9 @@ const Navbar = () => {
               <img src="/icons/twitter-icon.png" alt="Twitter" className="w-5 h-5" />
             </a>
             <a
-              href="#buy"
+              href="https://ape.store/base/0x04620ac712a1cf6f42d3412b5d7a82d3b7148ab6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 xl:px-6 py-2 rounded-lg font-cinzel text-sm font-bold transition-all duration-300"
             >
               BUY $LILPE
@@ -127,7 +129,9 @@ const Navbar = () => {
               </a>
             </div>
             <a
-              href="#buy"
+              href="https://ape.store/base/0x04620ac712a1cf6f42d3412b5d7a82d3b7148ab6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-lg font-cinzel font-bold transition-all duration-300 mt-2 mx-3"
               onClick={() => setIsOpen(false)}
             >

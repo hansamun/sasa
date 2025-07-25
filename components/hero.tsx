@@ -45,7 +45,9 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
             <a
-              href="#buy"
+              href="https://ape.store/base/0x04620ac712a1cf6f42d3412b5d7a82d3b7148ab6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 sm:px-10 py-3 sm:py-4 font-cinzel font-bold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 rounded-lg"
             >
               BUY $LILPE

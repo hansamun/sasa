@@ -5,7 +5,7 @@ import { useState } from "react"
 
 const Buy = () => {
   const [copied, setCopied] = useState(false)
-  const contractAddress = "Coming Soon..."
+  const contractAddress = "0x04620ac712a1cf6f42d3412b5d7a82d3b7148ab6"
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress)
@@ -82,7 +82,7 @@ const Buy = () => {
             <span className="text-blue-600">Base network tokens</span>.
           </p>
           <a
-            href="#"
+            href="https://ape.store/base/0x04620ac712a1cf6f42d3412b5d7a82d3b7148ab6"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 sm:px-12 py-3 sm:py-4 font-cinzel font-bold text-base sm:text-lg rounded-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center"
