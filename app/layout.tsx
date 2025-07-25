@@ -4,6 +4,7 @@ import { Noto_Serif_JP, Cinzel } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import AudioPlayer from "@/components/audio-player"
 
 const notoSerifJP = Noto_Serif_JP({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <AudioPlayer />
       </body>
     </html>
   )
