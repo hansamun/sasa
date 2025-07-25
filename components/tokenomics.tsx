@@ -67,12 +67,11 @@ const Tokenomics = () => {
               <Lock className="text-blue-600 mr-4 mt-1" size={24} />
               <div>
                 <h4 className="font-bold text-white mb-2 text-base sm:text-lg">
-                  Locked <span className="text-blue-600">Liquidity</span>
+                  Locked <span className="text-blue-600">Liquidity Forever</span>
                 </h4>
                 <p className="text-gray-300 text-sm sm:text-base">
-                  <span className="text-blue-600">Liquidity</span> locked for{" "}
-                  <span className="text-blue-600">2 years</span> to ensure project{" "}
-                  <span className="text-blue-600">stability</span> and investor{" "}
+                  <span className="text-blue-600">Liquidity</span> locked <span className="text-blue-600">forever</span>{" "}
+                  to ensure project <span className="text-blue-600">stability</span> and investor{" "}
                   <span className="text-blue-600">confidence</span>.
                 </p>
               </div>

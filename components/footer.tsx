@@ -13,7 +13,7 @@ const Footer = () => {
               Little Pepe <span className="text-gray-300">$LILPE</span>
             </Link>
             <p className="mt-4 text-gray-400 calligraphy text-lg leading-relaxed">
-              The premier hat-wearing meme token built on Base network. Join our community and be part of the future of
+              The premier Little Pepe meme token built on Base network. Join our community and be part of the future of
               decentralized finance.
             </p>
             <div className="mt-6 space-y-2 text-sm text-gray-500">
@@ -47,7 +47,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="#buy" className="text-gray-400 hover:text-blue-600 transition-colors">
-                  Buy MANYU
+                  Buy LILPE
                 </Link>
               </li>
               <li>

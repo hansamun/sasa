@@ -31,7 +31,7 @@ const Buy = () => {
         <div className="mb-12 sm:mb-16 bg-blue-900/20 border border-blue-600/30 p-6 sm:p-10 brush-stroke rounded-xl">
           <div className="text-center mb-6 sm:mb-8">
             <h3 className="text-xl sm:text-3xl font-bold font-cinzel text-white mb-4">
-              <span className="text-blue-600">MANYU WIF HAT</span> Token
+              <span className="text-blue-600">Little Pepe $LILPE</span> Token
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 text-base sm:text-lg">
               <div className="bg-black/30 p-3 sm:p-4 rounded-lg">
@@ -144,8 +144,8 @@ const Buy = () => {
                 Hold & <span className="text-blue-600">Participate</span>
               </h4>
               <p className="text-gray-300 text-sm sm:text-base">
-                Welcome to <span className="text-blue-600">MANYU</span>! Hold your tokens and participate in our growing{" "}
-                <span className="text-blue-600">community</span>.
+                Welcome to <span className="text-blue-600">Little Pepe</span>! Hold your tokens and participate in our
+                growing <span className="text-blue-600">community</span>.
               </p>
             </div>
           </div>
