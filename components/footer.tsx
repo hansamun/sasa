@@ -72,7 +72,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6 font-cinzel text-gray-300">Community</h3>
             <div className="space-y-4">
               <a
-                href="https://t.me/littlepepe"
+                href="https://t.me/littlepepebase"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-gray-400 hover:text-blue-600 transition-colors"
@@ -82,7 +82,7 @@ const Footer = () => {
                 <ExternalLink size={16} className="ml-2" />
               </a>
               <a
-                href="https://twitter.com/littlepepe"
+                href="https://x.com/LittlePepeBase"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-gray-400 hover:text-blue-600 transition-colors"

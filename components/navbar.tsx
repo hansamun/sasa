@@ -58,7 +58,7 @@ const Navbar = () => {
 
           <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
             <a
-              href="https://t.me/littlepepeonsol"
+              href="https://t.me/littlepepebase"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-600 transition-colors p-2"
@@ -67,7 +67,7 @@ const Navbar = () => {
               <img src="/icons/telegram-icon.webp" alt="Telegram" className="w-5 h-5" />
             </a>
             <a
-              href="https://twitter.com/littlepepeonsol"
+              href="https://x.com/LittlePepeBase"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-600 transition-colors p-2"
@@ -110,7 +110,7 @@ const Navbar = () => {
             ))}
             <div className="flex items-center space-x-4 px-3 py-2">
               <a
-                href="https://t.me/littlepepeonsol"
+                href="https://t.me/littlepepebase"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-600 transition-colors p-2"
@@ -118,7 +118,7 @@ const Navbar = () => {
                 <img src="/icons/telegram-icon.webp" alt="Telegram" className="w-6 h-6" />
               </a>
               <a
-                href="https://twitter.com/littlepepeonsol"
+                href="https://x.com/LittlePepeBase"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-600 transition-colors p-2"

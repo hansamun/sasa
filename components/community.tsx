@@ -3,13 +3,13 @@ const Community = () => {
     {
       name: "Telegram",
       description: "Join our main community chat",
-      url: "https://t.me/littlepepe",
+      url: "https://t.me/littlepepebase",
       icon: "/icons/telegram-icon.webp",
     },
     {
       name: "Twitter",
       description: "Follow for latest updates",
-      url: "https://twitter.com/littlepepe",
+      url: "https://x.com/LittlePepeBase",
       icon: "/icons/twitter-icon.png",
     },
   ]
