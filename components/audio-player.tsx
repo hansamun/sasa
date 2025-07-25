@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
-import { Play, Pause, Volume2, VolumeX } from "lucide-react"
+import { Play, Pause, Volume2, VolumeX, Music } from "lucide-react"
 
 const AudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -11,6 +11,8 @@ const AudioPlayer = () => {
   const [volume, setVolume] = useState(0.5)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [error, setError] = useState("")
   const audioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
@@ -18,29 +20,56 @@ const AudioPlayer = () => {
     if (!audio) return
 
     const updateTime = () => setCurrentTime(audio.currentTime)
-    const updateDuration = () => setDuration(audio.duration)
+    const updateDuration = () => {
+      setDuration(audio.duration)
+      setIsLoaded(true)
+    }
+    const handleError = () => {
+      setError("Failed to load audio")
+      setIsLoaded(false)
+    }
+    const handleCanPlay = () => {
+      setIsLoaded(true)
+      setError("")
+    }
 
     audio.addEventListener("timeupdate", updateTime)
     audio.addEventListener("loadedmetadata", updateDuration)
     audio.addEventListener("ended", () => setIsPlaying(false))
+    audio.addEventListener("error", handleError)
+    audio.addEventListener("canplay", handleCanPlay)
+    audio.addEventListener("loadstart", () => setIsLoaded(false))
+
+    // Set initial volume
+    audio.volume = volume
 
     return () => {
       audio.removeEventListener("timeupdate", updateTime)
       audio.removeEventListener("loadedmetadata", updateDuration)
       audio.removeEventListener("ended", () => setIsPlaying(false))
+      audio.removeEventListener("error", handleError)
+      audio.removeEventListener("canplay", handleCanPlay)
+      audio.removeEventListener("loadstart", () => setIsLoaded(false))
     }
-  }, [])
+  }, [volume])
 
-  const togglePlay = () => {
+  const togglePlay = async () => {
     const audio = audioRef.current
-    if (!audio) return
+    if (!audio || !isLoaded) return
 
-    if (isPlaying) {
-      audio.pause()
-    } else {
-      audio.play()
+    try {
+      if (isPlaying) {
+        audio.pause()
+        setIsPlaying(false)
+      } else {
+        await audio.play()
+        setIsPlaying(true)
+      }
+    } catch (err) {
+      console.error("Error playing audio:", err)
+      setError("Failed to play audio")
+      setIsPlaying(false)
     }
-    setIsPlaying(!isPlaying)
   }
 
   const toggleMute = () => {
@@ -56,12 +85,16 @@ const AudioPlayer = () => {
     setVolume(newVolume)
     if (audioRef.current) {
       audioRef.current.volume = newVolume
+      if (newVolume > 0 && isMuted) {
+        audioRef.current.muted = false
+        setIsMuted(false)
+      }
     }
   }
 
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const audio = audioRef.current
-    if (!audio) return
+    if (!audio || !isLoaded) return
 
     const newTime = Number.parseFloat(e.target.value)
     audio.currentTime = newTime
@@ -69,6 +102,7 @@ const AudioPlayer = () => {
   }
 
   const formatTime = (time: number) => {
+    if (!time || !isFinite(time)) return "0:00"
     const minutes = Math.floor(time / 60)
     const seconds = Math.floor(time % 60)
     return `${minutes}:${seconds.toString().padStart(2, "0")}`
@@ -76,15 +110,23 @@ const AudioPlayer = () => {
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
-      <div className="bg-black/90 backdrop-blur-md border border-blue-900/30 rounded-lg p-4 min-w-[300px]">
-        <audio ref={audioRef} src="/audio/song.mp3" preload="metadata" />
+      <div className="bg-black/95 backdrop-blur-md border border-blue-900/30 rounded-lg p-4 min-w-[320px] shadow-2xl">
+        <audio ref={audioRef} preload="auto" crossOrigin="anonymous">
+          <source src="https://wskffqaurfwbsuyokdjw.supabase.co/storage/v1/object/sign/aaa/song.mp3?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9mYTFhZWY2My1mOWZkLTQ2MTYtOWIwYi00YzFhMDY5ZThkYTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhYWEvc29uZy5tcDMiLCJpYXQiOjE3NTM0NjI2NjMsImV4cCI6MTc1NDA2NzQ2M30.MLGcL-drTi_J0AKByYQxaPjqN7iwgH-8sQZgdiL1oPc" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
 
         <div className="flex items-center justify-between mb-3">
-          <h4 className="text-white font-cinzel font-bold text-sm">Little Pepe Theme</h4>
+          <div className="flex items-center">
+            <Music className="text-blue-600 mr-2" size={16} />
+            <h4 className="text-white font-cinzel font-bold text-sm">Little Pepe Theme</h4>
+          </div>
           <div className="text-xs text-gray-400">
             {formatTime(currentTime)} / {formatTime(duration)}
           </div>
         </div>
+
+        {error && <div className="mb-3 text-xs text-red-400 bg-red-900/20 p-2 rounded">{error}</div>}
 
         {/* Progress Bar */}
         <div className="mb-3">
@@ -94,9 +136,12 @@ const AudioPlayer = () => {
             max={duration || 0}
             value={currentTime}
             onChange={handleSeek}
-            className="w-full h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
+            disabled={!isLoaded}
+            className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
             style={{
-              background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${(currentTime / duration) * 100}%, #374151 ${(currentTime / duration) * 100}%, #374151 100%)`,
+              background: isLoaded
+                ? `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${(currentTime / duration) * 100}%, #374151 ${(currentTime / duration) * 100}%, #374151 100%)`
+                : "#374151",
             }}
           />
         </div>
@@ -105,13 +150,27 @@ const AudioPlayer = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={togglePlay}
-            className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full transition-colors"
+            disabled={!isLoaded}
+            className={`text-white p-3 rounded-full transition-all duration-300 ${
+              isLoaded ? "bg-blue-600 hover:bg-blue-700 hover:scale-105" : "bg-gray-600 cursor-not-allowed"
+            }`}
+            title={isLoaded ? (isPlaying ? "Pause" : "Play") : "Loading..."}
           >
-            {isPlaying ? <Pause size={16} /> : <Play size={16} />}
+            {!isLoaded ? (
+              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            ) : isPlaying ? (
+              <Pause size={16} />
+            ) : (
+              <Play size={16} />
+            )}
           </button>
 
           <div className="flex items-center space-x-2 flex-1 ml-4">
-            <button onClick={toggleMute} className="text-gray-400 hover:text-white transition-colors">
+            <button
+              onClick={toggleMute}
+              className="text-gray-400 hover:text-white transition-colors p-1"
+              disabled={!isLoaded}
+            >
               {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
             </button>
             <input
@@ -121,13 +180,17 @@ const AudioPlayer = () => {
               step="0.1"
               value={isMuted ? 0 : volume}
               onChange={handleVolumeChange}
-              className="flex-1 h-1 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+              disabled={!isLoaded}
+              className="flex-1 h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
               style={{
                 background: `linear-gradient(to right, #3b82f6 0%, #3b82f6 ${(isMuted ? 0 : volume) * 100}%, #374151 ${(isMuted ? 0 : volume) * 100}%, #374151 100%)`,
               }}
             />
+            <span className="text-xs text-gray-400 w-8 text-right">{Math.round((isMuted ? 0 : volume) * 100)}%</span>
           </div>
         </div>
+
+        {!isLoaded && !error && <div className="mt-2 text-xs text-gray-400 text-center">Loading audio...</div>}
       </div>
     </div>
   )
