@@ -1,36 +1,40 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { Noto_Serif_JP, Cinzel } from "next/font/google"
 import "./globals.css"
-import { Orbitron, Rajdhani } from "next/font/google"
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
 
-const orbitron = Orbitron({
+const notoSerifJP = Noto_Serif_JP({
   subsets: ["latin"],
-  variable: "--font-orbitron",
+  variable: "--font-noto-serif",
+  weight: ["400", "700"],
 })
 
-const rajdhani = Rajdhani({
+const cinzel = Cinzel({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-rajdhani",
+  variable: "--font-cinzel",
+  weight: ["400", "700"],
 })
 
 export const metadata: Metadata = {
-  title: "SpectraCore",
-  description: "Created with v0",
-  icons: {
-    icon: "/images/favicon-robot.jpeg", // Memastikan path favicon sudah benar
-  },
+  title: "Little Pepe $LILPE",
+  description: "The premier Little Pepe meme token built on Base network - Little Pepe $LILPE",
     generator: 'v0.dev'
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="en" className={`${orbitron.variable} ${rajdhani.variable} ${rajdhani.className}`}>
-      <body>{children}</body>
+    <html lang="en" className="dark">
+      <body className={`${notoSerifJP.variable} ${cinzel.variable} bg-black text-gray-200 min-h-screen flex flex-col`}>
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </body>
     </html>
   )
 }
